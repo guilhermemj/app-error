@@ -9,7 +9,6 @@ Make application errors easier to handle
   - [`code`](#code)
   - [`level`](#level)
   - [`meta`](#meta)
-- [License](#license)
 
 ## Installation
 
@@ -114,7 +113,3 @@ Error severity level. Useful for logging.
 Extra info about the error to be retrieved later.
 
 It's very common to enrich logs and API responses with some execution context. This is where you should store it.
-
-## License
-
-Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
