@@ -1,0 +1,43 @@
+{
+  "name": "@guilhermemj/app-error",
+  "version": "1.0.0",
+  "description": "Error subclass on steroids for custom application exceptions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "npm run build -- -w",
+    "dev": "npm run build:watch",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guilhermemj/app-error.git"
+  },
+  "keywords": [
+    "error",
+    "exception",
+    "custom-error"
+  ],
+  "author": "Guilherme Jacomini <guilhermem.j@hotmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/guilhermemj/app-error/issues"
+  },
+  "homepage": "https://github.com/guilhermemj/app-error#readme",
+  "devDependencies": {
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint": "^7.21.0",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
