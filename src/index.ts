@@ -18,13 +18,13 @@ export default class AppError extends Error {
   date: Date;
   id: string;
 
-  constructor(message: string, options: AppErrorOptions = {}) {
+  constructor(message: string, options: AppErrorOptions = {}, meta?: AppError['meta']) {
     super(message);
 
     this.httpStatusCode = options.httpStatusCode ?? 500;
     this.code = options.code ?? "ERR_UNCAUGHT_EXCEPTION";
     this.level = options.level ?? "error";
-    this.meta = options.meta ?? {};
+    this.meta = meta ?? options.meta ?? {};
 
     this.date = new Date();
     this.id = uuid();

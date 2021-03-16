@@ -4,6 +4,7 @@ Make application errors easier to handle
 
 - [Installation](#installation)
 - [Usage](#usage)
+  - [Presets](#presets)
 - [Options](#options)
   - [`httpStatusCode`](#httpstatuscode)
   - [`code`](#code)
@@ -81,6 +82,30 @@ try {
 ```
 
 Please note how we are able to log much richier information with `AppError` and how easy it is to identify it's instances.
+
+### Presets
+
+In order to improve code DRYness it's recommended to create some presets for common errors in your application. Typescript users have the `AppErrorOptions` interface available for this purpose.
+
+To avoid destructuring and other workarounds when using presets, `AppError` constructor accepts a third parameter to be used as the `meta` object option.
+
+``` typescript
+import AppError, { AppErrorOptions } from "@guilhermemj/app-error";
+
+const ERR_INVALID_CONFIG: AppErrorOptions = {
+  httpStatusCode: 400,
+  code: "ERR_INVALID_CONFIG",
+  level: "debug",
+};
+
+if (!isValidEmail(payload.email)) {
+  throw new AppError(`"${payload.email}" is not a valid email`, ERR_INVALID_CONFIG, { payload, invalidField: "email" });
+}
+
+if (!payload.password) {
+  throw new AppError("Password is required", ERR_INVALID_CONFIG, { payload, invalidField: "password" });
+}
+```
 
 ## Options
 
