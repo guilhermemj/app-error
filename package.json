@@ -1,6 +1,6 @@
 {
   "name": "@guilhermemj/app-error",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Error subclass on steroids for custom application exceptions",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
